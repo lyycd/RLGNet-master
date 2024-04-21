@@ -1,0 +1,41 @@
+ICEWS14:
+    x : 0.8
+    dataset : 'ICEWS14'
+    seq_len : 10
+    lr : 0.001
+    device : 'cuda'
+ICEWS14s:
+    x : 0.8
+    dataset : 'ICEWS14s'
+    seq_len : 10
+    device : 'cuda'
+ICEWS18:
+    x : 0.8
+    dataset : 'ICEWS18'
+    seq_len : 10
+    device : 'cuda'
+
+ICEWS05-15:
+    x : 0.8
+    dataset : 'ICEWS05-15'
+    seq_len : 15
+    device : 'cuda'
+YAGO:
+    x : 0.9
+    dataset : 'YAGO'
+    seq_len : 1
+    device : 'cuda'
+GDELT:
+    x : 0.2
+    dataset : 'GDELT'
+    seq_len : 10
+    device : 'cuda'
+WIKI:
+    x : 0.9
+    dataset : 'WIKI'
+    seq_len : 1
+    device : 'cuda'
+
+
+
+

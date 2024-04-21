@@ -2,7 +2,7 @@
 
 
 
-## Environment variables & dependencies
+## Environment Setup
 
 ```bash
 conda create -n RLGNet python=3.10
@@ -14,15 +14,15 @@ pip install -r requirement.txt
 
 ## Train models
 
-我们将论文中的超参数设置保存在了args.yaml,所以直接训练模型即可
+We've saved the hyperparameters from the paper in `'args.yaml'`, so you can train the models directly:
 
 ```bash
-python main.py -d <dataset> --train_local --trian_global --train_repeat
+python main.py -d <dataset> --train_local --train_global --train_repeat
 ```
 
-代码将依次训练global,local和repeat模块. 如果有足够的计算资源建议采用如下做法,这可以减少训练时间:
+The program will sequentially train the global, local, and repeat modules. If you have sufficient computational resources, we suggest the following approach to reduce training time:
 
-1.	在两个终端中同时训练local和global模块
+1.	Train the local and global modules simultaneously in two different terminals:
 
 ```bash
 python main.py -d <dataset> --train_local
@@ -32,24 +32,23 @@ python main.py -d <dataset> --train_local
 python main.py -d <dataset> --trian_global
 ```
 
-2. 上诉命令执行完成后训练repeat模块
+2. Once the above commands have completed, train the repeat module:
 
-   ```bash
-   python main.py -d <dataset> --train_repeat
-   ```
 
-   
+```bash
+python main.py -d <dataset> --train_repeat
+```
 
 ## Evaluate models
 
-评估模型最终的结果
+To evaluate the results of the model:
 
 ```bash
 python main.py -d <dataset> --test_repeat [--multi_step] [--test_global] [--test_local]
 ```
 
-如果加上--multi_step 参数模型将评估多跳推理的结果,否则为单跳推理结果. 如果需要单独评估local和global模型效果,添加--test_local和--test_global即可
+Adding the `--multi_step` parameter will evaluate the results of multi-step reasoning, otherwise, it will evaluate the results of single-hop reasoning. If you need to only evaluate the effects of the local and global models separately, add `--test_local` and `--test_global`, respectively.
 
 ## Model Weight
 
-我们同时上传了模型权重 , 只需下载对应数据集权重即可进行模型评估 . 
+We've uploaded the model weights as well, just download the corresponding dataset weights to evaluate the model.

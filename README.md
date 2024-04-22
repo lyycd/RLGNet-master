@@ -29,7 +29,7 @@ python main.py -d <dataset> --train_local
 ```
 
 ```bash
-python main.py -d <dataset> --trian_global
+python main.py -d <dataset> --train_global
 ```
 
 2. Once the above commands have completed, train the repeat module:
